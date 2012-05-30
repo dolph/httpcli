@@ -14,7 +14,7 @@ setup(
         name='httpcli',
         version='1.0',
         description='Simple command line HTTP client (compared to cURL).',
-        long_description=read('README'),
+        long_description=read('README.rst'),
         keywords='http client cli curl rest restful',
         author='Dolph Mathews',
         author_email='dolph.mathews@gmail.com',
