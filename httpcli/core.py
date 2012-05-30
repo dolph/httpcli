@@ -1,6 +1,6 @@
-from http import cli
-from http import client
-from http import output
+from httpcli import cli
+from httpcli import client
+from httpcli import output
 
 
 def main():
