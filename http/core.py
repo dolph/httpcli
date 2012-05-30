@@ -6,19 +6,18 @@ from http import output
 def main():
     parser = cli.get_parser()
     namespace = cli.parse_args(parser)
-
-    headers = {'accept': 'application/json'}
+    namespace.headers = dict(namespace.headers)
 
     response, content = client.request(
             namespace.method,
             namespace.url,
             body=namespace.body,
-            headers=headers)
+            headers=namespace.headers)
 
     if namespace.verbose:
         # show request info
         output.print_title('%s %s' % (namespace.method.upper(), namespace.url))
-        output.print_dict(headers)
+        output.print_dict(namespace.headers)
         output.print_content(namespace.body)
 
         # show response info

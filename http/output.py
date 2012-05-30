@@ -8,6 +8,12 @@ def print_title(string):
     print
 
 
+def print_list(l):
+    for x in l.iteritems():
+        print x
+    print
+
+
 def print_dict(d):
     for header, value in d.iteritems():
         print '%s: %s' % (header.title(), value)
