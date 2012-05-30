@@ -1,28 +1,29 @@
+=======
 httpcli
 =======
 
 Just another command line HTTP client (in the spirit of cURL).
 
 Example Usage
--------------
+=============
 
 HTTP verbs are specified as a positional argument, followed by the URL to be
 acted on. The goal is to reflect the feel of a standard HTTP header. For
-example:
+example::
 
     $ http get http://localhost/
 
 To provide a request body (e.g. for a POST or PUT), use the third positional
-argument:
+argument::
 
     $ http post http://localhost/documents '{"json": "document"}'
 
-Arbitrary request headers can be specified as CLI args:
+Arbitrary request headers can be specified as CLI args::
 
     $ http get http://localhost/ --x-forwarded-for=10.0.0.50
 
 This would be translated as `X-Forwarded-For: 10.0.0.50` in the subsequent HTTP
-request. To illustrate this, we can enable verbose output:
+request. To illustrate this, we can enable verbose output::
 
     $ http --verbose get http://localhost/ --x-forwarded-for=10.0.0.50
 
@@ -54,7 +55,9 @@ request. To illustrate this, we can enable verbose output:
     }
 
 Built-In Help
--------------
+=============
+
+Example help output::
 
     $ http --help
     usage: http [-h] [-v] method url [body] ...
