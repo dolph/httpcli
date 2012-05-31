@@ -2,13 +2,13 @@
 
 from setuptools import setup
 
-README = 'README.RST'
+README = 'README.rst'
 with open(README) as file:
     long_description = file.read()
 
 setup(
         name='httpcli',
-        version='1.1.1',
+        version='1.1.2',
         description='RESTful command line HTTP client '
             '(and simpler than cURL).',
         long_description=long_description,
