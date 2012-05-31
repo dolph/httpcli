@@ -10,8 +10,9 @@ def main():
     namespace.headers = dict(namespace.headers)
 
     # set request content type automatically, unless user-specified
-    namespace.headers['Content-Type'] = namespace.headers.get('Content-Type',
-            content.detect_content_type(namespace.body))
+    content_type = content.detect_content_type(namespace.body)
+    if content_type is not None:
+        namespace.headers.setdefault('Content-Type', content_type)
 
     response, body = client.request(
             namespace.method,

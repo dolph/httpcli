@@ -2,7 +2,8 @@ import json
 
 
 CONTENT_TYPES = {
-        'json': 'application/json'
+        'json': 'application/json',
+        'text': 'text/plain'
 }
 
 
@@ -15,6 +16,8 @@ def detect_content_type(string):
         return CONTENT_TYPES['json']
     except:
         pass
+
+    return CONTENT_TYPES['text']
 
 
 def get_pretty(string):

@@ -22,4 +22,5 @@ def print_dict(d):
 
 def print_content(string):
     """Attempts to pretty print whatever string is provided."""
-    print content.get_pretty(string)
+    if string is not None:
+        print content.get_pretty(string)
