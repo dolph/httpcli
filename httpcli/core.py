@@ -1,5 +1,6 @@
 from httpcli import cli
 from httpcli import client
+from httpcli import content
 from httpcli import output
 
 
@@ -8,7 +9,11 @@ def main():
     namespace = cli.parse_args(parser)
     namespace.headers = dict(namespace.headers)
 
-    response, content = client.request(
+    # set request content type automatically, unless user-specified
+    namespace.headers['Content-Type'] = namespace.headers.get('Content-Type',
+            content.detect_content_type(namespace.body))
+
+    response, body = client.request(
             namespace.method,
             namespace.url,
             body=namespace.body,
@@ -24,4 +29,4 @@ def main():
         output.print_title('%s %s' % (response.status, response.reason))
         output.print_dict(response)
 
-    output.print_content(content)
+    output.print_content(body)

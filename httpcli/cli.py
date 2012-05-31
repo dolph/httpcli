@@ -41,7 +41,8 @@ def headers(string):
     if header[:2] != '--':
         raise argparse.ArgumentTypeError(msg)
 
-    return header[2:], value
+    # normalize header names
+    return header[2:].title(), value
 
 def parse_args(parser):
     return parser.parse_args()

@@ -1,4 +1,4 @@
-import json
+from httpcli import content
 
 
 def print_title(string):
@@ -22,9 +22,4 @@ def print_dict(d):
 
 def print_content(string):
     """Attempts to pretty print whatever string is provided."""
-    if string is not None:
-        try:
-            d = json.loads(string)
-            print json.dumps(d, indent=2)
-        except:
-            print string
+    print content.get_pretty(string)
