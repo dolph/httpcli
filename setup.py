@@ -12,8 +12,9 @@ def read(fname):
 
 setup(
         name='httpcli',
-        version='1.0',
-        description='Simple command line HTTP client (compared to cURL).',
+        version='1.1',
+        description='RESTful command line HTTP client '
+            '(and simpler than cURL).',
         long_description=read('README.rst'),
         keywords='http client cli curl rest restful',
         author='Dolph Mathews',
@@ -21,8 +22,17 @@ setup(
         url='http://github.com/dolph/httpcli',
         packages=['httpcli'],
         scripts=['bin/http'],
+        install_requires=[
+            'argparse',
+            'httplib2',
+            'setuptools',
+        ],
         classifiers=[
-            "Development Status :: 3 - Alpha",
-            "Topic :: Utilities",
+            'Development Status :: 4 - Beta',
+            'Environment :: Console',
+            'Intended Audience :: Developers',
+            'Intended Audience :: System Administrators',
+            'Topic :: Internet :: WWW/HTTP',
+            'Topic :: Utilities',
         ],
 )
