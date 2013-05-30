@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name='httpcli',
-    version='1.1.2',
+    version='1.1.3',
     description='RESTful command line HTTP client (and simpler than cURL).',
     keywords='http client cli curl rest restful',
     author='Dolph Mathews',
