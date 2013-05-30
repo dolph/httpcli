@@ -1,7 +1,0 @@
-#!/usr/bin/env python
-
-import httpcli
-
-
-if __name__ == '__main__':
-    httpcli.main()

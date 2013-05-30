@@ -1,23 +1,16 @@
-#!/usr/bin/env python
+import setuptools
 
-from setuptools import setup
 
-README = 'README.rst'
-with open(README) as file:
-    long_description = file.read()
-
-setup(
+setuptools.setup(
     name='httpcli',
     version='1.1.2',
     description='RESTful command line HTTP client (and simpler than cURL).',
-    long_description=long_description,
     keywords='http client cli curl rest restful',
     author='Dolph Mathews',
     author_email='dolph.mathews@gmail.com',
     url='http://github.com/dolph/httpcli',
     packages=['httpcli'],
-    scripts=['bin/http'],
-    package_data={'': [README]},
+    entry_points={'console_scripts': ['http = httpcli:main']},
     install_requires=[
         'argparse',
         'httplib2',
