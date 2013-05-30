@@ -15,10 +15,10 @@ def main():
         namespace.headers.setdefault('Content-Type', content_type)
 
     response, body = client.request(
-            namespace.method,
-            namespace.url,
-            body=namespace.body,
-            headers=namespace.headers)
+        namespace.method,
+        namespace.url,
+        body=namespace.body,
+        headers=namespace.headers)
 
     if namespace.verbose:
         # show request info

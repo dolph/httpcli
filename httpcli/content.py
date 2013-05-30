@@ -2,8 +2,8 @@ import json
 
 
 CONTENT_TYPES = {
-        'json': 'application/json',
-        'text': 'text/plain'
+    'json': 'application/json',
+    'text': 'text/plain'
 }
 
 
