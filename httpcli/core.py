@@ -31,3 +31,6 @@ def main():
         output.print_dict(response)
 
     output.print_content(body)
+
+    if response.status >= 400:
+        raise SystemExit(1)
