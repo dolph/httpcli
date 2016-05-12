@@ -11,8 +11,8 @@ def get_parser():
 
     # optionals
     parser.add_argument(
-        '-v', '--verbose', action='store_true', default=False,
-        help='show verbose output')
+        '-t', '--terse', action='store_true', default=False,
+        help='Only show the response body')
 
     # positionals
     parser.add_argument(

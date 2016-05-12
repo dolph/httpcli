@@ -20,11 +20,11 @@ def main():
         body=namespace.body,
         headers=namespace.headers)
 
-    if namespace.verbose:
+    if not namespace.terse:
         # show request info
         output.print_title('%s %s' % (namespace.method.upper(), namespace.url))
         output.print_dict(namespace.headers)
-        output.print_content(namespace.body)
+        output.print_content(namespace.body, extra_newline=True)
 
         # show response info
         output.print_title('%s %s' % (response.status, response.reason))
