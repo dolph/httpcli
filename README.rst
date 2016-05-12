@@ -16,25 +16,21 @@ example::
 To provide a request body (e.g. for a POST or PUT), use the third positional
 argument::
 
-    $ http post http://localhost/documents '{"json": "document"}'
+    $ http post http://localhost/documents '{"json": "document"}' --content-type="application/json"
 
-Arbitrary request headers can be specified as CLI args::
+Note the arbitrary request header being specified at the end as a normal CLI
+option. Any such trailing CLI options will be passed as request headers::
 
     $ http get http://localhost/ --x-forwarded-for=10.0.0.50
 
 This would be translated as `X-Forwarded-For: 10.0.0.50` in the subsequent HTTP
 request. To illustrate this, we can enable verbose output::
 
-    $ http --verbose get http://localhost/ --x-forwarded-for=10.0.0.50
-
+    $ http get http://localhost/ --x-forwarded-for=10.0.0.50
     GET http://localhost/
-    =====================
-
     X-Forwarded-For: 10.0.0.50
 
     200 OK
-    ======
-
     Status: 200
     Content-Length: 396
     Content-Location: http://localhost/
@@ -60,18 +56,17 @@ Built-In Help
 Example help output::
 
     $ http --help
-    usage: http [-h] [-v] method url [body] ...
+    usage: http [-h] [-t] method url [body] ...
 
     Python HTTP CLI Client
 
     positional arguments:
-    method         HTTP method to use (OPTIONS, GET, HEAD, POST, PUT, DELETE,
-                    TRACE, CONNECT)
-    url            URL to work with
-    body           Request body
-    headers        Additional request headers (keyword=value)
+      method       HTTP method to use (OPTIONS, GET, HEAD, POST, PUT, DELETE,
+                   TRACE, CONNECT)
+      url          URL to work with
+      body         Request body
+      headers      Additional request headers (keyword=value)
 
     optional arguments:
-    -h, --help     show this help message and exit
-    -v, --verbose  show verbose output
-
+      -h, --help   show this help message and exit
+      -t, --terse  Only show the response body
